@@ -1,0 +1,389 @@
+/* Page Wrapper */
+.contribute-page {
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 3rem 1.5rem 5rem 1.5rem;
+}
+
+.contribute-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Nav & Header */
+.contribute-nav {
+  margin-bottom: 2rem;
+}
+
+.contribute-header {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.contribute-badge {
+  display: inline-block;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contribute-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+}
+
+.contribute-subtitle {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Card Wrapper */
+.contribute-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contribute-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 1.75rem;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.section-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs & Selects */
+.contribute-form input[type="text"],
+.contribute-form textarea,
+.contribute-form select {
+  width: 100%;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.contribute-form input:focus,
+.contribute-form textarea:focus,
+.contribute-form select:focus {
+  border-color: #38bdf8;
+}
+
+/* Dropzone */
+.file-dropzone {
+  border: 2px dashed #475569;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  background-color: #0f172a;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.file-dropzone:hover {
+  border-color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.02);
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.upload-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.dropzone-text {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 0.4rem;
+}
+
+.dropzone-hint {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Selected File Preview Box */
+.file-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e293b;
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  position: relative; /* Ensures z-index works */
+  z-index: 10;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #f8fafc;
+  font-size: 0.95rem;
+}
+
+.file-size {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.remove-file-btn {
+background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto; /* Forces clickability */
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.remove-file-btn:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+}
+
+/* Submit Button */
+.btn-upload-submit {
+  width: 100%;
+  background-color: #10b981; /* Emerald Green */
+  color: #ffffff;
+  border: none;
+  padding: 0.95rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-upload-submit:hover {
+  background-color: #059669;
+}
+
+/* Modal Backdrop Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show state */
+.modal-overlay:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal Card */
+.modal-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay:not(.hidden) .modal-card {
+  transform: translateY(0);
+}
+
+.success-icon-large {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #10b981;
+  margin-bottom: 0.75rem;
+}
+
+.modal-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-secondary-auth {
+  width: 100%;
+  background-color: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.btn-secondary-auth:hover {
+  border-color: #475569;
+  background-color: #162032;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem; /* Creates clean breathing room between the two inputs */
+}
+
+
+/* Fix for two-column inputs touching */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; /* Creates clean breathing room between inputs */
+  margin-bottom: 1.25rem; /* Space between row and Document Title */
+  width: 100%;
+}
+
+/* Ensure inputs fill their grid column properly without overflowing */
+.form-row .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/* Mobile responsive collapse */
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* 1. Ensure the card container has healthy inner breathing room */
+.contribute-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 2.5rem; /* Generous padding all around */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. Fix the grid row gap and alignment */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; /* Space between the two columns */
+  margin-bottom: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 3. Force all inputs and select dropdowns to obey box-sizing and full width */
+.contribute-form input[type="text"],
+.contribute-form textarea,
+.contribute-form select {
+  width: 100%;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box; /* Crucial: includes padding inside width calculation so it never overflows */
+  transition: border-color 0.2s;
+  font-family: inherit;
+}

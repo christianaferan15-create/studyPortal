@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>STUDY PORTAL</title>
+        <link rel="stylesheet" href="legal.css">
+    </head>
+    <body>
+<main class="legal-page">
+  <div class="legal-container">
+    
+    <!-- Navigation Back Link -->
+    <div class="legal-nav">
+      <a href="login.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 19"></polyline>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
+    <!-- Header -->
+    <div class="legal-header">
+      <span class="legal-badge">Legal Compliance</span>
+      <h1 class="legal-title">Copyright & DMCA Policy</h1>
+      <p class="legal-subtitle">
+        Study Portal respects intellectual property rights. Learn how we handle student uploads and how copyright owners can request material removal.
+      </p>
+    </div>
+
+    <div class="legal-content">
+      
+      <!-- Safe Harbor Overview -->
+      <section class="legal-card">
+        <h2>1. DMCA & Safe Harbor Compliance</h2>
+        <p>
+          <strong>Study Portal</strong> operates as an educational content hosting provider under standard Safe Harbor and DMCA framework guidelines. Content on this platform is uploaded by registered students across various Nigerian institutions for peer review and exam preparation.
+        </p>
+        <p>
+          We do not proactively produce or claim copyright over third-party lecture notes, past exam questions, or student summaries. However, we strictly forbid the unauthorized sharing of copyrighted commercial books or proprietary institutional materials.
+        </p>
+      </section>
+
+      <!-- Repeat Infringer Policy -->
+      <section class="legal-card">
+        <h2>2. Repeat Infringer Policy</h2>
+        <p>
+          In accordance with digital copyright regulations, Study Portal maintains a strict zero-tolerance policy for repeat copyright violations:
+        </p>
+        <ul>
+          <li><strong>First Notice:</strong> Flagged content is immediately hidden or removed, and the uploader receives a formal warning.</li>
+          <li><strong>Second Notice:</strong> Upload privileges for the associated user account are suspended pending investigation.</li>
+          <li><strong>Third Notice:</strong> The user account is permanently terminated and banned from uploading future materials.</li>
+        </ul>
+      </section>
+
+      <!-- Interactive Takedown Request Form -->
+      <section id="takedown" class="legal-card takedown-card">
+        <div class="takedown-header">
+          <div class="takedown-icon">🛡️</div>
+          <div>
+            <h2>Submit a Copyright Takedown Request</h2>
+            <p class="takedown-desc">Are you a copyright holder, author, or institutional representative? Fill out the form below to request immediate content removal.</p>
+          </div>
+        </div>
+
+        <form class="takedown-form" onsubmit="handleTakedownSubmit(event)">
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="complainant-name">Your Full Name / Entity</label>
+              <input type="text" id="complainant-name" name="name" required placeholder="e.g. Dr. A. O. Bello or Publisher Name" />
+            </div>
+
+            <div class="form-group">
+              <label for="complainant-email">Official Email Address</label>
+              <input type="email" id="complainant-email" name="email" required placeholder="representative@institution.edu.ng" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="material-url">URL or Title of Infringing Material on Study Portal</label>
+            <input type="text" id="material-url" name="url" required placeholder="https://studyportal.ng/browse/lasu/science/csc201-notes" />
+          </div>
+
+          <div class="form-group">
+            <label for="proof-details">Description of Original Work & Proof of Ownership</label>
+            <textarea id="proof-details" name="details" rows="4" required placeholder="Please provide details proving ownership of the material (e.g. course outline link, publication proof, or official university role)..."></textarea>
+          </div>
+
+          <div class="form-checkbox-group">
+            <input type="checkbox" id="good-faith" required />
+            <label for="good-faith">
+              I state in good faith that the use of the material is not authorized by the copyright owner, its agent, or the law.
+            </label>
+          </div>
+
+          <button type="submit" id="takedown-submit-btn" class="btn btn-takedown">
+            Submit Takedown Notice
+          </button>
+        </form>
+
+        <!-- Success Message Container -->
+        <div id="takedown-success" class="hidden success-box">
+          <h3>✅ Notice Received</h3>
+          <p>Thank you for submitting your request. Our legal compliance team will review the details and disable access to the specified material within 24–48 hours.</p>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+</main>
+</body>
+<script src="script.js"></script>
+</html>

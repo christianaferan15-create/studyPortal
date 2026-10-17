@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>STUDY PORTAL</title>
+        <link rel="stylesheet" href="browse.css">
+    </head>
+    <body>
+        <main class="browse-page">
+  <div class="browse-container">
+    
+    <!-- Page Header -->
+    <div class="browse-header">
+      <span class="browse-badge">Department Repository</span>
+      <h1 class="browse-title">Explore Course Materials</h1>
+      <p class="browse-subtitle">
+        Access verified past questions, lecture slides, and summary notes shared by students across your university.
+      </p>
+    </div>
+
+    <!-- Filter & Search Bar -->
+    <div class="filter-card">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-input" placeholder="Search by course code or topic (e.g. CSC 201)..." onkeyup="filterMaterials()" />
+      </div>
+
+      <div class="filter-row">
+        <select id="filter-level" class="form-select" onchange="filterMaterials()">
+          <option value="">All Levels</option>
+          <option value="100">100 Level</option>
+          <option value="200">200 Level</option>
+          <option value="300">300 Level</option>
+          <option value="400">400 Level</option>
+        </select>
+
+        <select id="filter-type" class="form-select" onchange="filterMaterials()">
+          <option value="">All Material Types</option>
+          <option value="past-question">Past Questions</option>
+          <option value="lecture-notes">Lecture Notes</option>
+          <option value="summary">Summary Sheets</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Repository Cards Grid -->
+    <div class="material-grid" id="material-grid">
+      
+      <!-- Material Card 1 -->
+      <div class="material-card" data-level="200" data-type="past-question" data-search="csc 201 data structures">
+        <div class="material-meta">
+          <span class="badge-type badge-pq">Past Question</span>
+          <span class="material-level">200 Level</span>
+        </div>
+        <h3 class="material-course">CSC 201</h3>
+        <h4 class="material-heading">Data Structures & Algorithms (2021-2023)</h4>
+        <p class="material-desc">Includes compiled past exam questions with departmental solutions and lecture pointers.</p>
+        <div class="material-footer">
+          <span class="material-author">Uploaded by Alex K.</span>
+          <a href="#" class="btn-download" onclick="downloadMaterial('CSC 201 - Data Structures')">Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Material Card 2 -->
+      <div class="material-card" data-level="100" data-type="lecture-notes" data-search="mth 101 calculus">
+        <div class="material-meta">
+          <span class="badge-type badge-notes">Lecture Notes</span>
+          <span class="material-level">100 Level</span>
+        </div>
+        <h3 class="material-course">MTH 101</h3>
+        <h4 class="material-heading">General Mathematics I - Limits & Calculus</h4>
+        <p class="material-desc">Comprehensive lecture slides covering differentiation rules, sequences, and series.</p>
+        <div class="material-footer">
+          <span class="material-author">Uploaded by Sarah M.</span>
+          <a href="#" class="btn-download" onclick="downloadMaterial('MTH 101 - Calculus')">Download PDF</a>
+        </div>
+      </div>
+
+      <!-- Material Card 3 -->
+      <div class="material-card" data-level="300" data-type="summary" data-search="gst 311 entrepreneurship">
+        <div class="material-meta">
+          <span class="badge-type badge-summary">Summary Sheet</span>
+          <span class="material-level">300 Level</span>
+        </div>
+        <h3 class="material-course">GST 311</h3>
+        <h4 class="material-heading">Entrepreneurship Study Guide & Business Plan</h4>
+        <p class="material-desc">Concise summary notes for exam prep, feasibility study framework, and key definitions.</p>
+        <div class="material-footer">
+          <span class="material-author">Uploaded by Oluwaferanmi M.</span>
+          <a href="#" class="btn-download" onclick="downloadMaterial('GST 311 - Entrepreneurship')">Download PDF</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+</body>
+</html>

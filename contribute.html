@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>STUDY PORTAL</title>
+        <link rel="stylesheet" href="contribute.css">
+    </head>
+    <body>
+<main class="contribute-page">
+  <div class="contribute-container">
+    
+    <!-- Top Back Link -->
+    <div class="contribute-nav">
+      <a href="index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 19"></polyline>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+
+    <!-- Page Header -->
+    <div class="contribute-header">
+      <span class="contribute-badge">Community Resource Hub</span>
+      <h1 class="contribute-title">Upload Study Materials</h1>
+      <p class="contribute-subtitle">
+        Help fellow students across Nigeria by sharing lecture notes, course outlines, or past exam questions for your department.
+      </p>
+    </div>
+
+    <!-- Upload Form Card -->
+    <div class="contribute-card">
+      <form class="contribute-form" onsubmit="handleUploadSubmit(event)">
+        
+        <!-- Step 1: Academic Tagging -->
+        <div class="form-section">
+          <h3 class="section-heading">1. Categorize Material</h3>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="institution">Institution *</label>
+              <select id="institution" name="institution" class="form-select" required>
+                <option value="" disabled selected>Select Institution</option>
+                <option value="lasu">Lagos State Univ. (LASU)</option>
+                <option value="unilag">Univ. of Lagos (UNILAG)</option>
+                <option value="oau">Obafemi Awolowo Univ. (OAU)</option>
+                <option value="ui">Univ. of Ibadan (UI)</option>
+                <option value="abu">Ahmadu Bello Univ. (ABU)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="faculty">Faculty *</label>
+              <select id="faculty" name="faculty" class="form-select" required>
+                <option value="" disabled selected>Select Faculty</option>
+                <option value="science">Faculty of Science</option>
+                <option value="engineering">Faculty of Engineering</option>
+                <option value="social-science">Faculty of Social Sciences</option>
+                <option value="law">Faculty of Law</option>
+                <option value="arts">Faculty of Arts</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="department">Department *</label>
+              <select id="department" name="department" class="form-select" required>
+                <option value="" disabled selected>Select Department</option>
+                <option value="csc">Computer Science</option>
+                <option value="eee">Electrical & Electronics Eng.</option>
+                <option value="bch">Biochemistry</option>
+                <option value="eco">Economics</option>
+                <option value="mcb">Microbiology</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="level">Course Level *</label>
+              <select id="level" name="level" class="form-select" required>
+                <option value="" disabled selected>Select Level</option>
+                <option value="100">100 Level</option>
+                <option value="200">200 Level</option>
+                <option value="300">300 Level</option>
+                <option value="400">400 Level</option>
+                <option value="500">500 Level</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+  <h3 class="section-heading">2. Document Details</h3>
+
+  <!-- Parent row holding the two columns -->
+  <div class="form-row">
+    
+    <!-- Column 1: Course Code -->
+    <div class="form-group">
+      <label for="course-code">Course Code *</label>
+      <input type="text" id="course-code" name="courseCode" required placeholder="e.g. CSC 201" />
+    </div>
+
+    <!-- Column 2: Material Type -->
+    <div class="form-group">
+      <label for="material-type">Material Type *</label>
+      <select id="material-type" name="materialType" class="form-select" required>
+        <option value="" disabled selected>Select Type</option>
+        <option value="past-question">Past Exam Questions</option>
+        <option value="lecture-notes">Lecture Notes / Slides</option>
+        <option value="summary">Student Summary Sheet</option>
+        <option value="lab-manual">Lab / Practical Manual</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Full width fields below -->
+  <div class="form-group">
+    <label for="document-title">Document Title / Topic *</label>
+    <input type="text" id="document-title" name="documentTitle" required placeholder="e.g. CSC 201 - Data Structures & Algorithms Past Questions (2021-2023)" />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Additional Notes / Overview (Optional)</label>
+    <textarea id="description" name="description" rows="3" placeholder="Add details like lecturer name, examination session, or specific chapters covered..."></textarea>
+  </div>
+</div>
+
+        <!-- Step 3: Attach File -->
+<div class="form-section">
+  <h3 class="section-heading">3. Attach File</h3>
+  
+  <div class="file-dropzone" id="dropzone">
+    <input type="file" id="file-input" name="file" accept=".pdf,.doc,.docx,.jpg,.png" class="hidden-file-input" />
+    
+    <!-- Default Prompt State -->
+    <div class="dropzone-content" id="dropzone-prompt">
+      <div class="upload-icon">📄</div>
+      <p class="dropzone-text"><strong>Click to upload</strong> or drag and drop your file here</p>
+      <span class="dropzone-hint">Supports PDF, DOCX, PNG, JPG (Max size: 25MB)</span>
+    </div>
+
+    <!-- File Selected Preview State -->
+    <div class="file-preview hidden" id="file-preview">
+      <span class="file-icon">📎</span>
+      <div class="file-details">
+        <span class="file-name" id="file-name-display">document.pdf</span>
+        <span class="file-size" id="file-size-display">1.4 MB</span>
+      </div>
+      <!-- Separate ID specifically for removal -->
+      <button type="button" class="remove-file-btn" id="remove-file-btn">✕</button>
+    </div>
+  </div>
+</div>
+
+        <!-- Step 4: Legal & Safe Harbor Consent -->
+        <div class="form-section legal-consent-section">
+          <div class="form-checkbox-group">
+            <input type="checkbox" id="copyright-consent" name="copyrightConsent" required />
+            <label for="copyright-consent">
+              I confirm that I own or have permission to share these study materials. I understand that uploading copyrighted commercial textbooks violates <a href="terms.html" target="_blank">Study Portal Terms</a> and may lead to account termination.
+            </label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="upload-btn" class="btn btn-upload-submit">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <span>Publish Material</span>
+        </button>
+
+      </form>
+
+      <!-- Success Modal Popup (Hidden by default) -->
+<div id="success-modal" class="modal-overlay hidden">
+  <div class="modal-card">
+    <div class="success-icon-large">🎉</div>
+    <h2 class="modal-title">Material Uploaded Successfully!</h2>
+    <p class="modal-desc">
+      Thank you for contributing. Your document has been verified and published to your department's repository.
+    </p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-secondary-auth" onclick="resetUploadForm()">Upload Another</button>
+      <a href="/browse" class="btn btn-submit">View in Repository</a>
+    </div>
+  </div>
+</div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+<script src="contribute.js"></script>
+</body>
+</html>
